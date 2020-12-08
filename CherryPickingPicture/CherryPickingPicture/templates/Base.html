@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CPP - CherryPickingPicture</title>
+    <style>
+        body {
+            margin:0;
+        }
+
+        header {
+            margin: 0;
+            padding-top: 35px;
+            padding-bottom: 35px;
+            padding-left:5%;
+            padding-right:5%;
+            background-color: rgb(153, 217, 234);
+            vertical-align: middle;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            width:90%;
+        }
+        a{
+            text-decoration: none;
+            color:black;
+        }
+        section {
+            padding-top:200px;
+            margin-left:100px;
+            margin-right:100px;
+        }
+        #logo {
+
+        }
+        #login {
+            font-size: 50px;
+        }
+        #empty{
+            width:80%;
+            display:inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="{% url 'CherryPickingPicture:main' %}" id="logo"><img src="/static/img/logo.png" alt="로고"></a>
+        <div id="empty"></div>
+        <a href="{% url 'CherryPickingPicture:login' %}" id="login">LOG IN</a>
+    </header>
+    <section>
+    {% block content %}{% endblock %}
+    </section>
+</body>
+</html>
