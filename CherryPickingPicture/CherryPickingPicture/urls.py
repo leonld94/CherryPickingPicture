@@ -5,7 +5,7 @@ app_name = "CherryPickingPicture"
 
 urlpatterns = [
     path('', views.main, name='main'),
-    path('Login', views.login, name='login'),
-    path('Signup', views.signup, name='signup'),
+    path('Login/', views.login, name='login'),
+    path('Signup/', views.signup, name='signup'),
 ]
 
