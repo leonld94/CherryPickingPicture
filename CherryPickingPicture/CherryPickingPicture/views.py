@@ -10,5 +10,8 @@ def main(request):
 
 
 def login(request):
-    template = loader.get_template('Login.html');
-    return HttpResponse(template.render());
+    return render(request, 'Login.html');
+
+
+def signup(request):
+    return render(request, 'Signup.html');
