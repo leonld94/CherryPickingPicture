@@ -11,8 +11,9 @@
         <input type="text" id="id" name="id" value="" required><br>
         <label for="password">비밀번호 : </label>
         <input type="passwd" id="password" name="password" value="" required><br>
-
         <input type="submit" value="로그인"></fieldset>
 </form>
-
+<a href="{% url 'CherryPickingPicture:signup' %}">
+        <input type="button" href="" value="회원가입 하러 가기">
+</a>
 {% endblock %}
