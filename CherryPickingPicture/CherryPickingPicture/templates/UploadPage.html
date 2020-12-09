@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>이미지 업로드하기</h1>
+<form action="{% url 'CherryPickingPicture:upload_image' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset>
+        <legend>업로드</legend>
+        <input type="file" name="image" required> <br>
+        <input type="submit" value="Upload!">
+    </fieldset>
+</form>
+
+{% endblock %}
