@@ -7,8 +7,10 @@ from django.contrib.auth.models import User
 # Create your views here.
 
 def main(request):
-    template = loader.get_template('Main_page.html');
-    return HttpResponse(template.render());
+    if request.COOKIES.get('username') is not None:
+        context = {'nickname' : User.objects.get(username=request.COOKIES.get('username')).first_name}
+        render(request, 'Main_page.html', context);
+    return render(request, 'Main_page.html')
 
 
 def login(request):
@@ -20,19 +22,17 @@ def login(request):
             auth.login(request, user)
             return redirect("../")
         else:
-            return render(request, "account/login.html")
+            return render(request, "Login.html")
     elif request.method == "POST":
         un = request.POST['id'];
         passwd = request.POST['password'];
         user = auth.authenticate(request, username=un, password = passwd);
         if user is not None:
             auth.login(request, user)
-            if request.POST.get("keep_login") == "TRUE":
-                response = render(request, 'Main_page.html')
-                response.set_cookie('username', un)
-                response.set_cookie('password', passwd)
-                return response
-            return redirect('../');
+            response = render(request, 'Main_page.html')
+            response.set_cookie('username', un)
+            response.set_cookie('password', passwd)
+            return response;
     return render(request, 'Login.html');
 
 
@@ -51,3 +51,11 @@ def signup(request):
             context = {'failure' : "비밀번호가 일치하지 않습니다."}
             return render(request, 'Signup.html', context);
     return render(request, 'Signup.html');
+
+
+def logout(request):
+    response = render(request, 'Main_page.html')
+    response.delete_cookie('username')
+    response.delete_cookie('password')
+    auth.logout(request)
+    return response

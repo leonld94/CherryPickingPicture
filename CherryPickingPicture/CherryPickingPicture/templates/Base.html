@@ -48,7 +48,11 @@
     <header>
         <a href="{% url 'CherryPickingPicture:main' %}" id="logo"><img src="/static/img/logo.png" alt="로고"></a>
         <div id="empty"></div>
+        {% if nickname %}
+        <a href="" style="font-size:50px">{{ nickname }}님</a>
+        {% else %}
         <a href="{% url 'CherryPickingPicture:login' %}" id="login">LOG IN</a>
+        {% endif %}
     </header>
     <section>
     {% block content %}{% endblock %}
