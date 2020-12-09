@@ -2,10 +2,9 @@
 
 {% block content %}
 
-<h1>{{ show_user.first_name }}님의 페이지입니다.</h1>
-<p>{{ show_user.first_name }}님이 최근에 업로드한 사진 : </p>
-{% if show_user.picture_set.all %}
-    {% for image in show_user.picture_set.all %}
+<h1>최근 업로드된 사진들</h1>
+{% if image_list %}
+    {% for image in image_list %}
         <div style="display: inline-block; border: 1px solid black; padding: 5px; margin: 10px">
             <div style="width: 200px; height: 200px; display: flex; justify-content: center; align-items: center;">
                 <a href="{% url 'CherryPickingPicture:image_page' image.id %}">
@@ -13,19 +12,11 @@
                 </a>
             </div>
             <br>
-            Uploaded by <a href="{% url 'CherryPickingPicture:user_page' request.user.id %}">{{ image.uploader.first_name }}</a>
+            Uploaded by <a href="{% url 'CherryPickingPicture:user_page' image.uploader.id %}">{{ image.uploader.first_name }}</a>
         </div>
     {% endfor %}
 {% else %}
-    업로드한 이미지가 없습니다.
-{% endif %}
-
-{% if show_user.id == request.user.id %}
-    <br>
-    <h2>더욱 풍부한 페이지를 위해.</h2>
-    <a href="{% url 'CherryPickingPicture:upload_page' %}">
-        <input type="button" value="사진 업로드하기">
-    </a>
+    아무도 사진을 올리지 않았군요...
 {% endif %}
 
 <script>

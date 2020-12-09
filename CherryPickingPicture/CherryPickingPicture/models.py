@@ -6,3 +6,6 @@ from django.db import models
 class Picture(models.Model):
     uploader = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to="")
+
+    class Meta:
+        ordering = ['-id']

@@ -38,6 +38,9 @@
         #login {
             font-size: 50px;
         }
+        #logout{
+            font-size: 30px;
+        }
         #empty{
             width:80%;
             display:inline-block;
@@ -48,10 +51,12 @@
     <header>
         <a href="{% url 'CherryPickingPicture:main' %}" id="logo"><img src="/static/img/logo.png" alt="로고"></a>
         <div id="empty"></div>
-        {% if nickname %}
-        <a href="" style="font-size:50px">{{ nickname }}님</a>
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'CherryPickingPicture:user_page' request.user.id %}" id="logout">{{ request.user.first_name }}님</a>
+            &nbsp;/&nbsp;
+            <a href="{% url 'CherryPickingPicture:logout' %}">LOG OUT</a>
         {% else %}
-        <a href="{% url 'CherryPickingPicture:login' %}" id="login">LOG IN</a>
+            <a href="{% url 'CherryPickingPicture:login' %}" id="login">LOG IN</a>
         {% endif %}
     </header>
     <section>

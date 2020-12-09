@@ -4,7 +4,7 @@
 
 <img src="{{ show_image.image.url }}" alt="IMAGE"> <br>
 <p>
-    Uploaded by <a href="{% url 'CherryPickingPicture:user_page' show_image.uploader.id %}">{{ show_image.uploader.username }}</a>
+    Uploaded by <a href="{% url 'CherryPickingPicture:user_page' show_image.uploader.id %}">{{ show_image.uploader.first_name }}</a>
 </p>
 
 {% endblock %}
