@@ -41,16 +41,25 @@
         #logout{
             font-size: 30px;
         }
-        #empty{
+        #nav{
             width:80%;
             display:inline-block;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <header>
         <a href="{% url 'CherryPickingPicture:main' %}" id="logo"><img src="/static/img/logo.png" alt="로고"></a>
-        <div id="empty"></div>
+        <div id="nav">
+            <a href="{% url 'CherryPickingPicture:recent_page' %}">최근 업로드된 사진 보기</a>
+            &nbsp;/&nbsp;
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'CherryPickingPicture:upload_page' %}">사진 업로드하기</a>
+                &nbsp;/&nbsp;
+            {% endif %}
+            <a href="{% url 'CherryPickingPicture:rank_page' %}">열심히 활동한 유저 보기</a>
+        </div>
         {% if request.user.is_authenticated %}
             <a href="{% url 'CherryPickingPicture:user_page' request.user.id %}" id="logout">{{ request.user.first_name }}님</a>
             &nbsp;/&nbsp;

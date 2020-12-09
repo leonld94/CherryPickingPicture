@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>열심히 활동하신 유저들입니다.</h1>
+{% if user_list %}
+    <ul>
+        {% for user in user_list %}
+            <li>
+                <a href="{% url 'CherryPickingPicture:user_page' user.id %}">
+                    {{ user.first_name }}
+                </a>
+                &nbsp;({{ user.upload_count }}장의 사진)
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>유저가 없군요...</p>
+{% endif %}
+
+{% endblock %}

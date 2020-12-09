@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f1e2866f-6c03-4091-8449-d911837e5ae6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CherryPickingPicture/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/CherryPickingPicture/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CherryPickingPicture/templates/Base.html" beforeDir="false" afterPath="$PROJECT_DIR$/CherryPickingPicture/templates/Base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CherryPickingPicture/templates/ImagePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/CherryPickingPicture/templates/ImagePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CherryPickingPicture/templates/RecentPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/CherryPickingPicture/templates/RecentPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CherryPickingPicture/templates/UserPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/CherryPickingPicture/templates/UserPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CherryPickingPicture/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CherryPickingPicture/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CherryPickingPicture/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/CherryPickingPicture/views.py" afterDir="false" />
@@ -64,6 +63,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607430789090" />
+    <state x="923" y="223" width="672" height="678" key="search.everywhere.popup" timestamp="1607536129403">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="923" y="223" width="672" height="678" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1607536129403" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

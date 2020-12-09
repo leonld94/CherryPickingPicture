@@ -13,7 +13,7 @@
                 </a>
             </div>
             <br>
-            Uploaded by <a href="{% url 'CherryPickingPicture:user_page' request.user.id %}">{{ image.uploader.first_name }}</a>
+            Uploaded by <a href="{% url 'CherryPickingPicture:user_page' image.uploader.id %}">{{ image.uploader.first_name }}</a>
         </div>
     {% endfor %}
 {% else %}

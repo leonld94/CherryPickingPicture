@@ -1,3 +1,4 @@
+from django.db.models import Count
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.template import loader
@@ -108,3 +109,7 @@ def image_page(request, image_id):
 def recent_page(request):
     image_list = Picture.objects.all()
     return render(request, "RecentPage.html", {'image_list': image_list})
+
+def rank_page(request):
+    user_list = User.objects.all().annotate(upload_count=Count('picture')).order_by('-upload_count')
+    return render(request, "RankPage.html", {'user_list': user_list})
